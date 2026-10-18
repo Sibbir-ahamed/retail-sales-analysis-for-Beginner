@@ -1,5 +1,5 @@
 ``` text
-📊 Project 02: Retail Sales Data Analysis
+# 📊 Project 02: Retail Sales Data Analysis #
 
 Department: Data Analytics
 Level: Beginner
