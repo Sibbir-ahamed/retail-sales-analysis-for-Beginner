@@ -15,7 +15,7 @@
 
 ---
 
-## 📋 TASK 01 — Dataset Inspection
+# 📋 TASK 01 — Dataset Inspection
 
 ### Your Tasks
 
@@ -28,7 +28,7 @@
 7. Generate a statistical summary of numerical columns.
 8. Write your own observations based on the dataset.
 
-## 📊 Task 02 — Missing Values Analysis
+# 📊 Task 02 — Missing Values Analysis
 
 ## 1. Business Scenario — Why Does Your Work Matter?
 
