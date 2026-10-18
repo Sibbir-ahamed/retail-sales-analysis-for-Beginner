@@ -1,4 +1,4 @@
-## 📁 VS Code Project Structure
+
 ![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?logo=pandas&logoColor=white)
 ![Difficulty](https://img.shields.io/badge/Difficulty-Beginner-brightgreen)
@@ -43,9 +43,13 @@ retail-sales-analysis/
 ├── src/
 │   └── data_inspection.py
 │
+├── task/
+│   ├── task-01-dataset-inspection.md
+|   ├── task-02-missing-values-analysis.md
+|
 ├── README.md
 |
-└── Your Task
+└── task.md
 ```
 ## 📑 Table of Contents
 
