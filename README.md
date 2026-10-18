@@ -5,8 +5,12 @@ retail-sales-analysis/
 ├── data/
 │   └── Sales_transactions_2022_2025.csv
 │
-├── notebooks/
-│   └── 01_dataset_inspection.ipynb
+├── src/
+│   └── data_inspection.py
+│
+├── reports/
+│
+├── requirements.txt
 │
 └── README.md
 ```

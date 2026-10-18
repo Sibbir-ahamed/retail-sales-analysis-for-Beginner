@@ -1,9 +1,13 @@
-Project: Retail Sales Data Analysis
+## Now I'm your Manager-
+### What you will do ?
 
+```text
+Project: Retail Sales Data Analysis
 Department: Data Analytics
 Level: Beginner
 Tool: Python + Pandas
 Dataset: Sales_transactions_2022_2025.csv
+```
 
 ## 📋 TASK 01 — Dataset Inspection
 
