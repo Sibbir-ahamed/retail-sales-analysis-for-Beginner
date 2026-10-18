@@ -25,6 +25,27 @@ Learn how to inspect data, assess data quality, investigate missing values, and 
 
 **Explore the data. Understand the problems. Analyze with purpose.**
 
+## 📁 VS Code Project Structure
+```text
+retail-sales-analysis/
+│
+├── data/
+│   └── Sales_transactions_2022_2025.csv
+│
+├── reports/
+│   └── data_inspection.py
+│
+├── requirements.txt/
+│   
+├── src/
+│   └── data_inspection.py
+│
+├── README.md
+|
+└── Your Task
+```
+
+
 </div>
 
 ---
@@ -305,31 +326,3 @@ If you find this project useful for learning data analysis, feel free to explore
 **Learn by doing. Think critically. Analyze responsibly.**
 
 </div>
-
-```text
-retail-sales-analysis/
-│
-├── data/
-│   └── Sales_transactions_2022_2025.csv
-│
-├── reports/
-│   └── data_inspection.py
-│
-├── requirements.txt/
-│   
-├── src/
-│   └── data_inspection.py
-│
-├── README.md
-|
-└── Your Task
-```
-
-## 📊 Project : Retail Sales Data Analysis
-``` text
-Department: Data Analytics
-Level: Beginner
-Tool: Python + Pandas
-Dataset: Sales_transactions_2022_2025.csv
-
-```
