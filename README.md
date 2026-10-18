@@ -25,6 +25,9 @@ Learn how to inspect data, assess data quality, investigate missing values, and 
 
 **Explore the data. Understand the problems. Analyze with purpose.**
 
+</div>
+
+---
 ## 📁 VS Code Project Structure
 ```text
 retail-sales-analysis/
@@ -44,12 +47,6 @@ retail-sales-analysis/
 |
 └── Your Task
 ```
-
-
-</div>
-
----
-
 ## 📑 Table of Contents
 
 - [📌 Project Overview](#-project-overview)
