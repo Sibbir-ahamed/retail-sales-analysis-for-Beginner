@@ -28,7 +28,7 @@ Learn how to inspect data, assess data quality, investigate missing values, and 
 </div>
 
 ---
-## 📁 VS Code Project Structure
+## 📁 Project Structure
 ```text
 retail-sales-analysis/
 │
