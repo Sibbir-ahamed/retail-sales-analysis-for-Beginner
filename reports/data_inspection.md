@@ -1,17 +1,17 @@
 # Data Inspection Report
 
 ## 1. Dataset Overview
-
+```text
 * Total Rows: 18045
 * Total Columns: 36
-
+```
 ## 2. Column Information
-
+```text
 All the columns name
 ['Transaction_ID', 'Order_ID', 'Customer_ID', 'Customer_Name', 'Customer_Age', 'Customer_Gender', 'Customer_Segment', 'Order_Date', 'Order_Time', 'Sales_Channel', 'Store_ID', 'Store_Name', 'Country', 'Region', 'City', 'Product_ID', 'Product_Name', 'Product_Category', 'Product_Subcategory', 'Quantity', 'Unit_Price', 'Discount_Percentage', 'Sales_Amount', 'Cost_Amount', 'Profit', 'Payment_Method', 'Order_Status', 'Shipping_Method', 'Delivery_Days', 'Return_Flag', 'Return_Reason', 'Sales_Representative', 'Promotion_Code', 'Customer_Rating', 'Inventory_Level', 'Order_Year']
-
+```
 ## 3. Data Types
-
+```text
  #   Column                Non-Null Count  Dtype
 ---  ------                --------------  -----
  0   Transaction_ID        18045 non-null  str
@@ -51,8 +51,9 @@ All the columns name
  34  Inventory_Level       17847 non-null  float64
  35  Order_Year            18045 non-null  int64
 dtypes: float64(9), int64(2), str(25)
-
+```
 ## Missing Values
+```text
 Missing values:
 Customer_Name        108
 Customer_Age         218
@@ -64,7 +65,7 @@ Return_Reason      16168
 Promotion_Code      9737
 Customer_Rating     3435
 Inventory_Level      198
-
+```
 ## 4. Summary statistics:
 ```text
 Summary statistics:
@@ -79,10 +80,9 @@ min        4.000000     -3.000000     21.390000             0.000000     16.6800
 max      112.000000     11.000000   1425.090000           110.000000  14303.070000  10791.000000   3512.080000      10.000000         5.000000       157.000000   2025.000000
 ```
 
-## 5. Initial Observations
 
 ## 5. Initial Observations
-
+```text
 1. **Dataset Size:** The dataset contains 18,045 rows and 36 columns, covering customer, transaction, product, sales, profit, payment, delivery, and return information.
 
 2. **Data Types:** The dataset contains 25 string columns, 9 float64 columns, and 2 int64 columns.
@@ -100,15 +100,16 @@ max      112.000000     11.000000   1425.090000           110.000000  14303.0700
 8. **Delivery:** The average delivery time is approximately 2.26 days. Some records have a delivery time of zero days, which may be valid but requires context.
 
 9. **Business Analysis Opportunities:** The dataset can support further analysis of sales trends, product performance, profitability, customer segments, regional performance, promotions, delivery, and product returns.
-
+```
 
 ## 6. Data Quality Notes
 
 [Record any missing-value concerns or unusual data types observed. Duplicate records have not yet been investigated.]
 
 ## 6. Next Steps
-
+```text
 * Investigate missing values.
 * Check for duplicate records.
 * Validate data types.
 * Begin exploratory data analysis.
+```
