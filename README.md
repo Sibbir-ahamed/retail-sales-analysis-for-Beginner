@@ -1,6 +1,5 @@
-``` text
 # 📊 Project 02: Retail Sales Data Analysis
-
+``` text
 Department: Data Analytics
 Level: Beginner
 Tool: Python + Pandas
