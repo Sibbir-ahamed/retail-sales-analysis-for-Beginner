@@ -1,0 +1,54 @@
+About this file
+
+Suggest Edits
+This CSV file contains 5,000 AI and technology job records across 37 columns, covering key information about Artificial Intelligence careers, Machine Learning jobs, salaries, experience, locations, industries, remote work, career growth, job satisfaction, AI maturity, and automation risk.
+
+The file is part of the Global AI Jobs 2026 🌍🤖 dataset and is designed for:
+
+Exploratory Data Analysis (EDA)
+Data Visualization
+Salary Analysis
+AI Career Research
+Machine Learning Projects
+Workforce Analytics
+Predictive Modeling
+📊 File Details
+Attribute Details
+Format CSV
+Records 5,000
+Columns 37
+Domain AI & Technology Jobs
+Focus Jobs, Salaries & AI Career Insights
+Time Context 2026 AI Job Market
+🔍 Key Topics
+
+The dataset covers the following major areas:
+
+🤖 AI Jobs
+🧠 Machine Learning
+📊 Data Science
+💼 AI Careers
+💰 Salaries
+🌍 Remote Work
+📈 Career Growth
+😊 Job Satisfaction
+⚠️ Automation Risk
+🏢 AI Maturity
+💻 Technology Careers
+🚀 Potential Uses
+
+This dataset can be used to build a variety of data science and AI projects, including:
+
+AI Salary Prediction Models
+Career Recommendation Systems
+Job Market Dashboards
+Automation-Risk Analysis
+Salary Comparison & Analysis
+AI Workforce Insights
+Machine Learning Prediction Models
+Career Growth Analysis
+Remote Work Trend Analysis
+AI Industry & Job Market Research
+
+🌟 Dataset Overview
+The Global AI Jobs 2026 🌍🤖 dataset provides a comprehensive view of the modern AI and technology job market, making it useful for analyzing salary trends, career opportunities, employment patterns, AI adoption, and automation risks across different roles, industries, locations, and experience levels.
