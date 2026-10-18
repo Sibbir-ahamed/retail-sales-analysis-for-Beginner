@@ -87,7 +87,7 @@ By completing this assignment, you should be able to:
 
 This assignment contains six subtasks.
 
-### Task 2.1 — Missing Values Count
+### Task 1 — Missing Values Count
 
 **Objective:** Determine how many values are missing in each column.
 
@@ -99,7 +99,7 @@ This assignment contains six subtasks.
 
 **Expected output:** A column-wise missing value count summary.
 
-### Task 2.2 — Missing Values Percentage
+### Task 2 — Missing Values Percentage
 
 **Objective:** Determine what percentage of each column's values is missing.
 
@@ -111,7 +111,7 @@ This assignment contains six subtasks.
 
 **Expected output:** A table containing missing value counts and percentages.
 
-### Task 2.3 — Columns with Missing Values
+### Task 3 — Columns with Missing Values
 
 **Objective:** Identify which columns contain missing information.
 
@@ -123,7 +123,7 @@ This assignment contains six subtasks.
 
 **Expected output:** A clear list of affected columns and a summary of their count.
 
-### Task 2.4 — Total Missing Values
+### Task 4 — Total Missing Values
 
 **Objective:** Calculate the total number of missing cells in the entire dataset.
 
@@ -135,7 +135,7 @@ This assignment contains six subtasks.
 
 **Expected output:** The total number of missing cells in the dataset.
 
-### Task 2.5 — Column with the Highest Missing Values
+### Task 5 — Column with the Highest Missing Values
 
 **Objective:** Determine which column contains the highest number of missing values.
 
@@ -150,7 +150,7 @@ This assignment contains six subtasks.
 
 **Note:** If multiple columns share the highest count, report all tied columns.
 
-### Task 2.6 — Business Interpretation
+### Task 6 — Business Interpretation
 
 **Objective:** Explain the potential business implications of the findings.
 

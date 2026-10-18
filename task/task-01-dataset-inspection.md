@@ -63,49 +63,49 @@ By completing this assignment, you should be able to:
 
 ## 📝 04. Your Tasks
 
-### Task 1.1 — Load the Dataset
+### Task 1 — Load the Dataset
 
 Load `Sales_transactions_2022_2025.csv` into a Pandas DataFrame.
 
 **Your goal:** Confirm that the dataset loads successfully and is accessible for analysis.
 
-### Task 1.2 — Inspect the First 10 Rows
+### Task 2 — Inspect the First 10 Rows
 
 Display the first 10 records.
 
 **Your goal:** Understand how the data is organized and what information each record contains.
 
-### Task 1.3 — Inspect the Last 5 Rows
+### Task 3 — Inspect the Last 5 Rows
 
 Display the last 5 records.
 
 **Your goal:** Check the structure of the final records and confirm that the dataset extends to its expected end.
 
-### Task 1.4 — Identify Dataset Dimensions
+### Task 4 — Identify Dataset Dimensions
 
 Determine the total number of rows and columns.
 
 **Your goal:** Understand the size of the dataset.
 
-### Task 1.5 — Display All Column Names
+### Task 5 — Display All Column Names
 
 List every column name in the dataset.
 
 **Your goal:** Identify the available variables for future analysis.
 
-### Task 1.6 — Inspect Data Types and Non-Null Counts
+### Task 6 — Inspect Data Types and Non-Null Counts
 
 Examine the data types and non-null counts of all columns.
 
 **Your goal:** Understand how each column is stored and identify columns that may require further investigation.
 
-### Task 1.7 — Generate Descriptive Statistics
+### Task 7 — Generate Descriptive Statistics
 
 Generate a statistical summary of the numerical columns.
 
 **Your goal:** Understand the basic statistical characteristics of numerical data, including count, mean, standard deviation, minimum, maximum, and quartiles where applicable.
 
-### Task 1.8 — Document Your Initial Observations
+### Task 8 — Document Your Initial Observations
 
 Write a short summary of your findings.
 
