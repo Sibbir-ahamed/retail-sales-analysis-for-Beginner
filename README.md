@@ -1,4 +1,7 @@
 ## 📁 VS Code Project Structure
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?logo=pandas&logoColor=white)
+![Difficulty](https://img.shields.io/badge/Difficulty-Beginner-brightgreen)
 ```text
 retail-sales-analysis/
 │

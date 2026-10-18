@@ -11,7 +11,7 @@
 | **Difficulty** | Beginner |
 | **Tool** | Python + Pandas |
 | **Dataset** | `Sales_transactions_2022_2025.csv` |
-| **Estimated Time** | 30–45 minutes |
+| **Estimated Time** | 30–45 minutes for a task |
 
 ---
 
