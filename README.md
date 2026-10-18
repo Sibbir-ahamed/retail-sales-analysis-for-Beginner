@@ -5,14 +5,17 @@ retail-sales-analysis/
 ├── data/
 │   └── Sales_transactions_2022_2025.csv
 │
+├── reports/
+│   └── data_inspection.py
+│
+├── requirements.txt/
+│   
 ├── src/
 │   └── data_inspection.py
 │
-├── reports/
-│
-├── requirements.txt
-│
-└── README.md
+├── README.md
+|
+└── Your Task
 ```
 
 ## 📊 Project : Retail Sales Data Analysis
