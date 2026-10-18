@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 
 # Read the CSV file into a DataFrame
 df = pd.read_csv('E:\\Data_Analysis sheet\\retail\\data\\Sales_transactions_2022_2025.csv')
@@ -31,9 +30,18 @@ print(df.describe())
 
 # information about the DataFrame
 print("\nInformation :")
-print(df.info())
+df.info() 
 
+# missing values columns
+print("\nMissing values:")
+missing_values = df.isnull().sum()
+print(missing_values[missing_values > 0])
 
+# total number of missing values
+total_missing = df.isnull().sum().sum()
+print(f"\nTotal number : {total_missing}")
+
+# --- end task 01 ---
 
 
 
