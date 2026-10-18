@@ -5,7 +5,7 @@
 
 <div align="center">
 
-# 📊 Retail Sales & Data Quality Analysis
+# 📊 Retail Sales & Data Quality Analysis Using Pandas
 
 ### Turning Raw Data into Meaningful Insights
 
