@@ -17,8 +17,6 @@
 
 # 📋 TASK 01 — Dataset Inspection
 
-### Your Tasks
-
 1. Load the CSV file using Pandas.
 2. Display the first 10 rows.
 3. Display the last 5 rows.
