@@ -82,7 +82,7 @@ max      112.000000     11.000000   1425.090000           110.000000  14303.0700
 
 
 ## 5. Initial Observations
-```text
+
 1. **Dataset Size:** The dataset contains 18,045 rows and 36 columns, covering customer, transaction, product, sales, profit, payment, delivery, and return information.
 
 2. **Data Types:** The dataset contains 25 string columns, 9 float64 columns, and 2 int64 columns.
@@ -100,16 +100,14 @@ max      112.000000     11.000000   1425.090000           110.000000  14303.0700
 8. **Delivery:** The average delivery time is approximately 2.26 days. Some records have a delivery time of zero days, which may be valid but requires context.
 
 9. **Business Analysis Opportunities:** The dataset can support further analysis of sales trends, product performance, profitability, customer segments, regional performance, promotions, delivery, and product returns.
-```
+
 
 ## 6. Data Quality Notes
 
-[Record any missing-value concerns or unusual data types observed. Duplicate records have not yet been investigated.]
+Record any missing-value concerns or unusual data types observed. Duplicate records have not yet been investigated.
 
 ## 6. Next Steps
-```text
 * Investigate missing values.
 * Check for duplicate records.
 * Validate data types.
 * Begin exploratory data analysis.
-```
