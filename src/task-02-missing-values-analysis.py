@@ -43,10 +43,14 @@ max_count = missing.max()
 print("\nMissing Values Report")
 print("-"* 30 )
 print(f"Highest missing column name: {highest_col}")
-print(f"Highest missing column value : {max_count.max()}")
+print(f"Highest missing column value : {max_count.max()}\n")
 
 
-
+missing_sort = missing.sort_values(ascending=False)
+sec_highest = missing_sort.iloc[1]
+col_name = sec_highest.name()
+print("Second Highest Col", sec_highest)
+print("Highest values:", sec_highest)
 
 
 
