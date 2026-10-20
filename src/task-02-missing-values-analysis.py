@@ -47,7 +47,7 @@ print(f"Highest missing column value : {max_count.max()}\n")
 
 # check only name by single column data
 print("Customer rating")
-print(df["Customer_Rating"])
+print(df["Customer_Rating"].isnull().sum())
 
 
 
