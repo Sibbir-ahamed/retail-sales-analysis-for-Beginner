@@ -26,7 +26,8 @@ print(f"\nMissing column names:\n{missing[missing > 0]}")
 # task 2.4
 # Calculate Total Missing Values - মোট কতটি Missing cell আছে?
 missing = df.isnull().sum()
-print(f"\nMissing values: \n{missing[missing > 0]}")
+missing_value = missing.sort_values(ascending=False)
+print(f"\nMissing values: \n{missing_value[missing_value > 0]}")
 print("-" * 30)
 print(f"Total missing values: {missing.sum()}")
 
