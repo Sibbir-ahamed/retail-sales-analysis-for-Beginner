@@ -4,19 +4,35 @@ import pandas as pd
 df = pd.read_csv('E:\\Data_Analysis sheet\\retail\\data\\Sales_transactions_2022_2025.csv')
 
 # Task2.1
+# প্রতিটি Column-এ কতটি Missing Value আছে, তা বের করবে।
 # missing values- 
 
 print(f"missing values: {df.isnull().sum()}")
 
-# Total missing values 
-print(f"\nTotal missing values: {df.isnull().sum().sum()}")
 
-# Missing values each columns names
+# Task2.2
+#Missing percentage for each column
+missing = df.isnull().sum()
+total_col = df.shape[0]
+persent = ((missing / total_col )*100)
+print(f"Each column persentese is: {persent}")
+
+
+# task 2.3 
+# Missing values each columns names - কোন Column-এ Missing Values আছে?
 missing = df.isnull().sum()
 print(f"\nMissing column names:\n{missing[missing > 0]}")
 
+# task 2.4
+# Calculate Total Missing Values - মোট কতটি Missing cell আছে?
+missing = df.isnull().sum()
+print(f"\nMissing values: \n{missing[missing > 0]}")
+print("-" * 30)
+print(f"Total missing values: {missing.sum()}")
 
-# highest missing values column name 
+
+#task 2.5
+# highest missing values column name - কোন Column-এ সবচেয়ে বেশি Missing Values রয়েছে?
 
 missing = df.isnull().sum()
 
@@ -28,12 +44,7 @@ print("-"* 30 )
 print(f"Highest missing column name: {highest_col}")
 print(f"Highest missing column value : {max_count.max()}")
 
-# Task2.2
-#Missing percentage for each column
-missing = df.isnull().sum()
-total_col = df.shape[0]
-return_reson = ((missing / total_col )*100)
-print(f"Each column persentese is: {return_reson}")
+
 
 
 
