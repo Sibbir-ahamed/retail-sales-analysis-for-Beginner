@@ -45,14 +45,9 @@ print("-"* 30 )
 print(f"Highest missing column name: {highest_col}")
 print(f"Highest missing column value : {max_count.max()}\n")
 
-
-missing_sort = missing.sort_values(ascending=False)
-sec_highest = missing_sort.iloc[1]
-col_name = sec_highest.name()
-print("Second Highest Col", sec_highest)
-print("Highest values:", sec_highest)
-
-
+# check only name by single column data
+print("Customer rating")
+print(df["Customer_Rating"])
 
 
 
