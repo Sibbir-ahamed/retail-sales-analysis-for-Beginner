@@ -1,42 +1,51 @@
-# 📊 Task 02: Missing Values Analysis
+<div align="center">
 
-<p align="center">
-  <strong>Retail Sales & Profitability Analysis</strong><br>
-  Data Quality Assessment using Python & Pandas
-</p>
+# RETAIL SALES & PROFITABILITY ANALYSIS
 
----
+### Task 02 — Missing Values Analysis
 
-## 📌 Table of Contents
+**DATA QUALITY ASSESSMENT REPORT**
 
-* [🎯 Objective](#-objective)
-* [2.1 Missing Values in Each Column](#-21-count-missing-values-in-each-column)
-* [2.2 Overall Missing Values Percentage](#-22-calculate-total-missing-values-percentage)
-* [2.3 Columns Containing Missing Values](#-23-identify-columns-with-missing-values)
-* [2.4 Missing Values Ranking](#-24-rank-columns-by-missing-values)
-* [2.5 Column with the Highest Missing Values](#-25-identify-the-column-with-the-highest-missing-values)
-* [🔍 Key Findings](#-key-findings)
-* [💡 Recommendations](#-recommendations)
-* [📝 Conclusion](#-conclusion)
+<br>
+
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=flat-square\&logo=python\&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-Data_Analysis-150458?style=flat-square\&logo=pandas\&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Completed-2E8B57?style=flat-square)
+
+</div>
 
 ---
 
-## 🎯 Objective
+## 01. Executive Summary
 
-The objective of this task is to assess the completeness of the retail sales dataset by identifying missing values, calculating their percentage, and determining which columns require further investigation.
+This report evaluates missing data in the Retail Sales Transactions dataset using Python and Pandas. The analysis identifies incomplete columns, measures overall data completeness, and highlights areas requiring further investigation.
 
-**Tools Used:** `Python` · `Pandas`
+| Dataset Metrics             | Results |
+| :-------------------------- | ------: |
+| Total Records               |  19,850 |
+| Total Columns               |      36 |
+| Total Data Cells            | 714,600 |
+| Missing Values              |  30,479 |
+| Data Completeness           |  95.31% |
+| Columns with Missing Values | 10 / 36 |
+
+### Data Completeness Overview
+
+| Data Status    | Percentage |
+| :------------- | ---------: |
+| Complete Cells |     95.31% |
+| Missing Cells  |      4.69% |
 
 ---
 
-## 📋 2.1 Count Missing Values in Each Column
+## 02. Missing Values by Column
 
-The `isnull().sum()` method was used to calculate the number of missing values in each column.
+The following table presents the number of missing values in every column of the dataset.
 
 <details>
-<summary><strong>📂 View Complete Missing Values Report</strong></summary>
+<summary><strong>View All 36 Columns</strong></summary>
 
-| Column Name          | Missing Values |
+| Column               | Missing Values |
 | :------------------- | -------------: |
 | Transaction_ID       |              0 |
 | Order_ID             |              0 |
@@ -79,63 +88,36 @@ The `isnull().sum()` method was used to calculate the number of missing values i
 
 ---
 
-## 📈 2.2 Calculate Total Missing Values Percentage
+## 03. Columns Requiring Attention
 
-### Dataset Overview
+Only 10 of the 36 columns contain missing values.
 
-| Metric                 |   Value |
-| :--------------------- | ------: |
-| Total Rows             |  19,850 |
-| Total Columns          |      36 |
-| Total Data Cells       | 714,600 |
-| Missing Values         |  30,479 |
-| Missing Percentage     |   4.69% |
-| Non-Missing Values     | 684,121 |
-| Non-Missing Percentage |  95.31% |
+| Column          | Missing Values | Priority |
+| :-------------- | -------------: | :------- |
+| Return_Reason   |         16,168 | High     |
+| Promotion_Code  |          9,737 | High     |
+| Customer_Rating |          3,435 | High     |
+| Customer_Age    |            218 | Review   |
+| Inventory_Level |            198 | Review   |
+| Customer_Gender |            162 | Review   |
+| Delivery_Days   |            162 | Review   |
+| Payment_Method  |            147 | Review   |
+| Product_Name    |            144 | Review   |
+| Customer_Name   |            108 | Review   |
 
-### 📊 Data Completeness
-
-```text
-Missing Data     ████░░░░░░░░░░░░░░░░  4.69%
-Available Data   ███████████████████░ 95.31%
-```
-
-**Insight:** Approximately **95.31% of all data cells contain values**, while 4.69% are missing.
-
-> Note: These percentages represent all cells in the dataset, not the percentage of rows containing at least one missing value.
+*Priority is based on missing-value counts, not on business impact.*
 
 ---
 
-## 🔎 2.3 Identify Columns with Missing Values
+## 04. Missing Values Ranking
 
-A total of **10 columns out of 36** contain missing values.
-
-| No. | Column Name     | Missing Values |
-| --: | :-------------- | -------------: |
-|   1 | Customer_Name   |            108 |
-|   2 | Customer_Age    |            218 |
-|   3 | Customer_Gender |            162 |
-|   4 | Product_Name    |            144 |
-|   5 | Payment_Method  |            147 |
-|   6 | Delivery_Days   |            162 |
-|   7 | Return_Reason   |         16,168 |
-|   8 | Promotion_Code  |          9,737 |
-|   9 | Customer_Rating |          3,435 |
-|  10 | Inventory_Level |            198 |
-
-**Key Observation:** The remaining **26 columns contain no missing values**.
-
----
-
-## 🏆 2.4 Rank Columns by Missing Values
-
-The columns containing missing values were sorted in descending order to identify the most incomplete fields.
+Columns are ranked from highest to lowest according to their missing-value counts.
 
 | Rank | Column Name     | Missing Values |
 | ---: | :-------------- | -------------: |
-| 🥇 1 | Return_Reason   |         16,168 |
-| 🥈 2 | Promotion_Code  |          9,737 |
-| 🥉 3 | Customer_Rating |          3,435 |
+|    1 | Return_Reason   |         16,168 |
+|    2 | Promotion_Code  |          9,737 |
+|    3 | Customer_Rating |          3,435 |
 |    4 | Customer_Age    |            218 |
 |    5 | Inventory_Level |            198 |
 |    6 | Customer_Gender |            162 |
@@ -145,89 +127,73 @@ The columns containing missing values were sorted in descending order to identif
 |   10 | Customer_Name   |            108 |
 |      | **Total**       |     **30,479** |
 
-### 💡 Key Insight
+### Key Observation
 
-The three columns with the highest missing value counts are:
-
-1. **Return_Reason:** 16,168
-2. **Promotion_Code:** 9,737
-3. **Customer_Rating:** 3,435
+The three columns with the most missing values are `Return_Reason`, `Promotion_Code`, and `Customer_Rating`.
 
 Together, these columns account for most of the missing values in the dataset.
 
 ---
 
-## 🚨 2.5 Identify the Column with the Highest Missing Values
+## 05. Highest Missing Values Analysis
 
-The `idxmax()` method was used to identify the column with the highest number of missing values.
+### Identified Column: `Return_Reason`
 
-### Result
+| Metric                           | Result |
+| :------------------------------- | -----: |
+| Missing Values                   | 16,168 |
+| Total Dataset Rows               | 19,850 |
+| Missing Percentage Within Column | 81.45% |
 
-| Attribute                        | Result          |
-| :------------------------------- | :-------------- |
-| Column Name                      | `Return_Reason` |
-| Missing Values                   | 16,168          |
-| Total Rows                       | 19,850          |
-| Missing Percentage Within Column | 81.45%          |
+The `Return_Reason` column has the highest missing-value count in the dataset.
 
-### Analysis
+Approximately 81.45% of its rows have no recorded return reason.
 
-The `Return_Reason` column has the highest number of missing values in the dataset.
+**Important:** Missing return reasons do not automatically indicate incorrect data. Orders that were not returned may legitimately have no return reason.
 
-Approximately **81.45% of its rows have no recorded return reason**.
-
-However, a missing return reason does not necessarily indicate a data quality problem. Orders that were never returned may legitimately have no return reason.
-
-**Recommended Action:** Compare `Return_Reason` with `Return_Flag` before deciding how to handle the missing values.
+The `Return_Flag` column should be checked before making any data-cleaning decisions.
 
 ---
 
-## 🔍 Key Findings
+## 06. Key Findings
 
-| Finding                        | Result                   |
-| :----------------------------- | :----------------------- |
-| Dataset Size                   | 19,850 rows × 36 columns |
-| Total Missing Values           | 30,479                   |
-| Overall Missing Percentage     | 4.69%                    |
-| Columns with Missing Values    | 10                       |
-| Columns without Missing Values | 26                       |
-| Most Incomplete Column         | `Return_Reason`          |
-| Highest Missing Value Count    | 16,168                   |
-
-### Summary
-
-* ✅ Most data cells contain values.
-* ⚠️ Missing values are concentrated in a small number of columns.
-* 🔴 `Return_Reason` requires further investigation.
-* 🔴 `Promotion_Code` and `Customer_Rating` also have substantial missing values.
-* 🔍 Additional checks are needed to determine whether missing values are expected or indicate data quality issues.
+* **30,479** missing data cells were identified.
+* **4.69%** of all data cells are missing.
+* **95.31%** of all data cells contain values.
+* **10 columns** contain missing values.
+* **26 columns** have no missing values.
+* `Return_Reason` has the highest missing-value count.
+* `Promotion_Code` and `Customer_Rating` are the next two columns requiring attention.
 
 ---
 
-## 💡 Recommendations
+## 07. Recommendations
 
-1. **Investigate missing return reasons:** Compare `Return_Reason` with `Return_Flag`.
-2. **Review promotional data:** Determine whether missing `Promotion_Code` values indicate orders without promotions.
-3. **Evaluate customer ratings:** Check whether ratings were optional or not submitted.
-4. **Inspect customer and product information:** Review missing names, ages, genders, and product names.
-5. **Avoid premature data cleaning:** Do not automatically delete rows or fill missing values without understanding their meaning.
-6. **Continue data quality assessment:** Check for duplicate records, invalid values, inconsistent formats, and incorrect data types.
-
----
-
-## 📝 Conclusion
-
-The missing values analysis identified **30,479 missing data cells**, representing **4.69% of the dataset**.
-
-Although the overall missing percentage is relatively low, missing values are unevenly distributed across the columns.
-
-The `Return_Reason` column has the highest missing value count, followed by `Promotion_Code` and `Customer_Rating`.
-
-Further investigation is necessary to distinguish legitimate missing values from actual data quality problems before proceeding with data cleaning and exploratory data analysis.
+| Area                 | Recommended Action                                                    |
+| :------------------- | :-------------------------------------------------------------------- |
+| Return_Reason        | Compare missing values with `Return_Flag`.                            |
+| Promotion_Code       | Check whether orders without promotions have blank codes.             |
+| Customer_Rating      | Determine whether customer ratings are optional.                      |
+| Customer Information | Investigate missing names, ages, and genders.                         |
+| Product Information  | Verify missing product names against product identifiers.             |
+| Data Cleaning        | Avoid deleting or filling values without investigating their meaning. |
 
 ---
 
-<p align="center">
-  <strong>Task 02 — Completed ✅</strong><br>
-  <sub>Python · Pandas · Data Quality Analysis</sub>
-</p>
+## 08. Conclusion
+
+The analysis found that **4.69% of all data cells are missing**, with missing values concentrated in a small number of columns.
+
+The `Return_Reason` column requires particular attention because 81.45% of its rows have missing values. However, further investigation is needed to determine whether these values are legitimate or represent data quality issues.
+
+This assessment provides a foundation for the next stage of the project: **Data Cleaning and Exploratory Data Analysis (EDA).**
+
+---
+
+<div align="center">
+
+**TASK 02 — COMPLETED**
+
+*Python · Pandas · Data Quality Assessment*
+
+</div>
