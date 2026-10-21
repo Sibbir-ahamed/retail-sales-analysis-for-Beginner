@@ -8,7 +8,7 @@ df = pd.read_csv('E:\\Data_Analysis sheet\\retail\\data\\Sales_transactions_2022
 
 # Task 2.1 - Count Missing Values in Each Column
 
-print(f"Missing values: {df.isnull().sum()}")
+print(f"Missing values:\n{df.isnull().sum()}")
 
 
 # Task 2.2 - Calculate Total Missing Values Percentage
@@ -53,4 +53,7 @@ print("\nMissing Values Report")
 print("-" * 30)
 print(f"Highest missing column name: {highest_col}")
 print(f"Highest missing column value: {max_count}\n")
+
+
+
 
