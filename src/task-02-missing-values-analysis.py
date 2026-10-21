@@ -12,16 +12,17 @@ print(f"missing values: {df.isnull().sum()}")
 
 
 # Task2.2
-#Missing percentage for each column
+#Missing percentage for each column--------------------
 missing = df.isnull().sum()
-total_col = df.shape[0]
-total_row = df.shape[1]
-persent = ((missing / total_col )*100)
-print(f"Each column persentese is: {persent}")
+total_missing = missing.sum()
 
-total_missing_percentage = missing.sum()
-total_idx = total_col * total_row
-print(f"\nTotal percentage :{(total_missing_percentage / total_idx)*100 } % ")
+total_cells = df.size
+total_cr = df.shape[0] * df.shape[1]
+
+total_missing_percent = (total_missing / total_cr )* 100
+
+print(f"Total Missing Values: {total_missing}")
+print(f"\nTotal Missing Percent :{total_missing_percent:.2f} %")
 
 
 # task 2.3 
