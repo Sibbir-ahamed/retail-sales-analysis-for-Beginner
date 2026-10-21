@@ -1,4 +1,5 @@
 import pandas as pd
+import openpyxl as xl 
 
 # Load CSV File
 df = pd.read_csv('E:\\Data_Analysis sheet\\retail\\data\\Sales_transactions_2022_2025.csv')
@@ -48,7 +49,7 @@ max_count = missing.max()
 print("\nMissing Values Report")
 print("-"* 30 )
 print(f"Highest missing column name: {highest_col}")
-print(f"Highest missing column value : {max_count.max()}\n")
+print(f"Highest missing column value : {max_count}\n")
 
 
 
