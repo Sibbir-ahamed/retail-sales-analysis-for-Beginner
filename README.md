@@ -36,7 +36,8 @@ retail-sales-analysis/
 │   └── Sales_transactions_2022_2025.csv
 │
 ├── reports/
-│   └── data_inspection.py
+│   ├── task 01_report.py
+|   ├── task 02_report.py
 │
 ├── requirements.txt/
 │   
