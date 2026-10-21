@@ -14,8 +14,13 @@ print(f"missing values: {df.isnull().sum()}")
 #Missing percentage for each column
 missing = df.isnull().sum()
 total_col = df.shape[0]
+total_row = df.shape[1]
 persent = ((missing / total_col )*100)
 print(f"Each column persentese is: {persent}")
+
+total_missing_percentage = missing.sum()
+total_idx = total_col * total_row
+print(f"\nTotal percentage :{(total_missing_percentage / total_idx)*100 } % ")
 
 
 # task 2.3 
@@ -45,9 +50,7 @@ print("-"* 30 )
 print(f"Highest missing column name: {highest_col}")
 print(f"Highest missing column value : {max_count.max()}\n")
 
-# check only name by single column data
-print("Customer rating")
-print(df["Customer_Rating"].isnull().sum())
+
 
 
 
