@@ -38,11 +38,13 @@ retail-sales-analysis/
 ├── reports/
 │   ├── task 01_report.py
 |   ├── task 02_report.py
-│
+│   ├── task 03_report.py
+|
 ├── requirements.txt/
 │   
 ├── src/
-│   └── data_inspection.py
+│   ├── task-01-dataset-inspection.py
+|   ├── task-02-missing-values-analysis.py
 │
 ├── task/
 │   ├── task-01-dataset-inspection.md
