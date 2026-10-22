@@ -214,6 +214,17 @@ $$
 
 ৪. Missing Values-এর সংখ্যা বেশি হলেই কি সেটিকে ভুল Data বলতে পারি? কেন?
 
+missing = df.isnull().sum()
+
+missing_sorted = missing.sort_values(ascending=False)
+
+second_highest = missing_sorted.iloc[1]
+
+print("Second Highest Column:", second_highest.name)
+print("Missing Values:", second_highest)
+
+
+
 ---
 
 # 🟢 TASK 2.6 — Business Interpretation
@@ -359,3 +370,16 @@ Task শেষ হলে আমাকে তিনটি জিনিস পা�
 তুমি Code ও Output পাঠালে আমি Review করব। তারপর আমরা Task 2.2-তে যাব।
 
 এভাবেই ধাপে ধাপে তুমি Pandas শিখবে এবং GitHub-এর জন্য একটি বাস্তব Data Analysis Portfolio তৈরি করবে।
+
+
+
+
+
+
+
+
+
+
+
+
+
