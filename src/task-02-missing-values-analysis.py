@@ -3,7 +3,7 @@ import pandas as pd
 import openpyxl as xl
 
 # Load CSV File
-df = pd.read_csv('E:\\Data_Analysis sheet\\retail\\data\\Sales_transactions_2022_2025.csv')
+df = pd.read_csv('D:\\Data_Analysis sheet\\retail\\data\\Sales_transactions_2022_2025.csv')
 
 
 # Task 2.1 - Count Missing Values in Each Column
