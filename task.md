@@ -72,3 +72,59 @@ You need to complete a total of **6 tasks**.
 - [ ] 2.4 Total Missing Values
 - [ ] 2.5 Highest Missing Values
 - [ ] 2.6 Business Interpretation
+
+
+
+
+
+```python
+import pandas as pd
+
+# Load Dataset
+df = pd.read_csv('data/Sales_transactions_2022_2025.csv')
+
+# 1. Count Duplicate Rows
+duplicate_count = df.duplicated().sum()
+
+# 2. Calculate Duplicate Percentage
+total_rows = len(df)
+duplicate_percentage = (duplicate_count / total_rows) * 100
+
+# Display Output
+print("Total Rows:", total_rows)
+print("Total Duplicate Rows:", duplicate_count)
+print(f"Duplicate Percentage: {duplicate_percentage:.2f}%")
+
+
+
+চাইলে সব Duplicate Row দেখতে পারো:
+
+duplicate_rows = df[df.duplicated()]
+print(duplicate_rows)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
+
+
+
+
+
