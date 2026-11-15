@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Read the CSV file into a DataFrame
-df = pd.read_csv('E:\\Data_Analysis sheet\\retail\\data\\Sales_transactions_2022_2025.csv')
+df = pd.read_csv('D:\\Data_Analysis sheet\\retail\\data\\Sales_transactions_2022_2025.csv')
 
 # Display the first 10 rows of the DataFrame
 print("First 10 rows of the DataFrame:")

@@ -4,7 +4,7 @@ import pandas as pd
 df = pd.read_csv('data/Sales_transactions_2022_2025.csv')
 
 # task 3.1 
-# 1. Count Duplicate Rows
+# 1. Count Duplicate Rows o total duplicate rows in the dataset
 duplicate_count =df.duplicated().sum()
 print(f"\nTotal number of duplicate rows: {duplicate_count}")
 
@@ -28,15 +28,16 @@ all_duplicate = df[df.duplicated(keep=False)]
 print(f"\nAll Duplicate rows : { all_duplicate}")
 
 # Check for duplicates in specific columns
-allduplicate = df[df.duplicated(keep=False)]
-col_name = [
-'Transaction_ID',
-'Customer_ID',
-'Order_ID',
-'Prduct_ID',
-'Customer_Name'
-]
-print(allduplicate[col_name])
+# allduplicate = df[df.duplicated(keep=False)]
+# col_name = [
+# 'Transaction_ID',
+# 'Customer_ID',
+# 'Order_ID',
+# 'Prduct_ID',
+# 'Customer_Name'
+# ]
+# print(allduplicate[col_name])
 
 
+# TASK 3.2 — Date Validation
 
