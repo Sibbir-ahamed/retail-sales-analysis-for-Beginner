@@ -38,6 +38,9 @@ print(f"\nAll Duplicate rows : { all_duplicate}")
 # ]
 # print(allduplicate[col_name])
 
+allduplicate= df[df['Customer_ID'].duplicated(keep=False)]
+print(f"\nAll Duplicate rows in Customer_ID: {allduplicate}")
 
 # TASK 3.2 — Date Validation
-
+# check Order_Date data type
+print(f"\nOrder_Date data type: {df['Order_Date'].dtype}")
