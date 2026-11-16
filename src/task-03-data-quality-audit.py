@@ -83,3 +83,19 @@ numeric_columns = [
     'Delivery_Days',
     'Customer_Rating'
 ]
+print("------------Minimum Values--------------------\n")
+for col in numeric_columns:
+    print(col, "Minimum:", df[col].min())
+print("-------------Maximum Values-------------------\n")
+for col in numeric_columns:
+    print(col, "Maximum:", df[col].max())
+
+# 3. Negative Value Count
+for col in numeric_columns:
+    negative_count = (df[col] <0).sum()
+    print(f"\nNegative Value Count in {col} : {negative_count}")
+# 4. Zero Value Count
+print("\n-------------Zero Values-------------------\n")
+for col in numeric_columns:
+    zero_count = (df[col]==0).sum()
+    print(f"\nZero Value Count in {col} : {zero_count}")
