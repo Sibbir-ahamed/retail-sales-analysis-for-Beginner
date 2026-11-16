@@ -41,6 +41,33 @@ print(f"\nAll Duplicate rows : { all_duplicate}")
 allduplicate= df[df['Customer_ID'].duplicated(keep=False)]
 print(f"\nAll Duplicate rows in Customer_ID: {allduplicate}")
 
-# TASK 3.2 — Date Validation
-# check Order_Date data type
+### TASK 3.2 — Date Validation
+
+#1 check Order_Date data type
 print(f"\nOrder_Date data type: {df['Order_Date'].dtype}")
+
+#2 check date formate
+df['Order_Date'] = pd.to_datetime(df['Order_Date'],
+                                  errors = 'coerce', format='%Y-%m-%d')
+print(f"\nOrder_date formate:{df['Order_Date'].dtypes}")
+print(f"\nOrder_date after conversion:\n{df['Order_Date'].head(10)}")
+
+#2 check for invalid dates
+invalid_dates = df[df['Order_Date'].isnull()]
+print(f"\nInvalid Dates:\n{invalid_dates}")
+
+# 3
+
+# 4 & 5 Date range analysis and First and Last Order Dates 
+
+min_date = df['Order_Date'].min()
+max_date = df['Order_Date'].max()
+date_range =  max_date - min_date
+print("Date Range Analysis")
+print("=====================")
+print("First Order Date: ", min_date) 
+print("Last Order Date: ", max_date)
+print("Date Range: ", date_range.days, "days" )
+print("Date Range in Years: " , round(date_range.days/365.25, 2), "years")
+
+
