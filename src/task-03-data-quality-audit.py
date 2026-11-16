@@ -70,4 +70,16 @@ print("Last Order Date: ", max_date)
 print("Date Range: ", date_range.days, "days" )
 print("Date Range in Years: " , round(date_range.days/365.25, 2), "years")
 
-
+### TASK 3.3 — Numerical Value Validation
+# 1. Check numerical Columns
+numeric_columns = [
+    'Customer_Age',
+    'Quantity',
+    'Unit_Price',
+    'Discount_Percentage',
+    'Sales_Amount',
+    'Cost_Amount',
+    'Profit',
+    'Delivery_Days',
+    'Customer_Rating'
+]
