@@ -70,7 +70,7 @@ print("Last Order Date: ", max_date)
 print("Date Range: ", date_range.days, "days" )
 print("Date Range in Years: " , round(date_range.days/365.25, 2), "years")
 
-### TASK 3.3 — Numerical Value Validation
+### TASK 3.3 — Numerical Value Validation single way
 # 1. Check numerical Columns
 numeric_columns = [
     'Customer_Age',
@@ -101,7 +101,8 @@ for col in numeric_columns:
     print(f"\nZero Value Count in {col} : {zero_count}")
 
 
-import pandas as pd
+### Task 3.3 — Numerical Value Validation - Try another way to get all results in one table
+# ----------- all result in one table -----------
 
 numeric_columns = [
     'Customer_Age',
@@ -118,15 +119,16 @@ numeric_columns = [
 results = []
 
 for col in numeric_columns:
-
     results.append({
         'Column': col,
-        'Minimum': df[col].min(),
-        'Maximum': df[col].max(),
-        'Negative_Count': (df[col] < 0).sum(),
-        'Zero_Count': (df[col] == 0).sum()
+        'Minimum':df[col].min(),
+        'Maximum':df[col].max(),
+        'Negative':(df [col] < 0 ).sum(),
+        'Zero Count': (df[col] == 0).sum()
+
     })
 
 report = pd.DataFrame(results)
-
 print(report.to_string(index=False))
+
+
