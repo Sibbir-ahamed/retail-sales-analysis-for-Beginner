@@ -99,3 +99,34 @@ print("\n-------------Zero Values-------------------\n")
 for col in numeric_columns:
     zero_count = (df[col]==0).sum()
     print(f"\nZero Value Count in {col} : {zero_count}")
+
+
+import pandas as pd
+
+numeric_columns = [
+    'Customer_Age',
+    'Quantity',
+    'Unit_Price',
+    'Discount_Percentage',
+    'Sales_Amount',
+    'Cost_Amount',
+    'Profit',
+    'Delivery_Days',
+    'Customer_Rating'
+]
+
+results = []
+
+for col in numeric_columns:
+
+    results.append({
+        'Column': col,
+        'Minimum': df[col].min(),
+        'Maximum': df[col].max(),
+        'Negative_Count': (df[col] < 0).sum(),
+        'Zero_Count': (df[col] == 0).sum()
+    })
+
+report = pd.DataFrame(results)
+
+print(report.to_string(index=False))

@@ -73,6 +73,8 @@ Date অনুযায়ী Sales Trend বিশ্লেষণ করতে হ
 
 ৫. Dataset-এর সর্বপ্রথম এবং সর্বশেষ Order Date বের করবে।
 
+
+
 ### Manager-এর প্রশ্ন
 
 * `Order_Date` কি DateTime হিসেবে ব্যবহার করার উপযোগী?
