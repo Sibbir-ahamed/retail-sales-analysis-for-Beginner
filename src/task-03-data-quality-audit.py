@@ -47,10 +47,12 @@ print(f"\nAll Duplicate rows in Customer_ID: {allduplicate}")
 print(f"\nOrder_Date data type: {df['Order_Date'].dtype}")
 
 #2 check date formate
-df['Order_Date'] = pd.to_datetime(df['Order_Date'],
-                                  errors = 'coerce', format='%Y-%m-%d')
-print(f"\nOrder_date formate:{df['Order_Date'].dtypes}")
-print(f"\nOrder_date after conversion:\n{df['Order_Date'].head(10)}")
+df['Order_Date'] = pd.to_datetime(df['Order_Date'], errors = 'coerce', format='%Y-%m-%d')
+
+df['Order_Year'] = pd.to_datetime(df['Order_Year'], errors='coerce')
+
+# print(f"\nOrder_date formate:{df['Order_Date'].dtypes}")
+# print(f"\nOrder_date after conversion:\n{df['Order_Date'].head(10)}")
 
 #2 check for invalid dates
 invalid_dates = df[df['Order_Date'].isnull()]
@@ -130,5 +132,25 @@ for col in numeric_columns:
 
 report = pd.DataFrame(results)
 print(report.to_string(index=False))
+
+### TASK 3.4 — Date Range ও Order Year 
+
+# # step 1 : Convert Order_Date to Datetime
+# df['Order_Date'] = pd.to_datetime(df['Order_Date'], errors='coerce')
+
+# # step 2: Extract Year from Order_Date
+# df['Date_year'] = df['Order_Date'].dt.year
+
+# # step 3 : compare Date_Year with order_year
+# df['Year_Match'] = (df['Date_year']) == df['Order_Date']
+
+# # step 4: Identify Mismatch Records
+# mismatch = df[df['Year_Match'] == False]
+
+# # step 5 : Display Mismatch Records
+# print(mismatch['Order_Date', 'Date_Year','Order_Year'].to_string(index=False))
+
+# # step 6 : Count Total Mismatch
+# print("\nTotal Year Mismatch:", len(mismatch))
 
 
