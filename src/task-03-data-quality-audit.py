@@ -135,22 +135,19 @@ print(report.to_string(index=False))
 
 ### TASK 3.4 — Date Range ও Order Year 
 
-# # step 1 : Convert Order_Date to Datetime
-# df['Order_Date'] = pd.to_datetime(df['Order_Date'], errors='coerce')
+# Step 1: Convert Order_Date to Datetime
+df['Order_Date'] = pd.to_datetime(df['Order_Date'])
 
-# # step 2: Extract Year from Order_Date
-# df['Date_year'] = df['Order_Date'].dt.year
+# Step 2: Extract Year from Order_Date
+df['Date_year'] = df['Order_Date'].dt.year
 
-# # step 3 : compare Date_Year with order_year
-# df['Year_Match'] = (df['Date_year']) == df['Order_Date']
+# Step 3: Compare Date_year with Order_Year
+df['Result'] = df['Date_year'].eq(df['Order_Date']).map({
+    True:'Match',
+    False:'Mismatch'
+})
 
-# # step 4: Identify Mismatch Records
-# mismatch = df[df['Year_Match'] == False]
-
-# # step 5 : Display Mismatch Records
-# print(mismatch['Order_Date', 'Date_Year','Order_Year'].to_string(index=False))
-
-# # step 6 : Count Total Mismatch
-# print("\nTotal Year Mismatch:", len(mismatch))
+# Step 4: Display Result
+print(df[['Result', 'Order_Date','Order_Year']])
 
 
