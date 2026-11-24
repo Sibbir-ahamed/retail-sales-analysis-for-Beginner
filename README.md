@@ -38,7 +38,7 @@ retail-sales-analysis/
 ├── reports/
 │   ├── task 01_report.py
 |   ├── task 02_report.py
-│   ├── task 03_report.py
+│   └── task 03_report.py
 |
 ├── requirements.txt/
 │   
