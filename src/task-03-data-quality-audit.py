@@ -1,110 +1,288 @@
+# import pandas as pd
+
+# # Load Dataset
+# df = pd.read_csv('data/Sales_transactions_2022_2025.csv')
+
+# # task 3.1 
+# # 1. Count Duplicate Rows o total duplicate rows in the dataset
+# duplicate_count =df.duplicated().sum()
+# print(f"\nTotal number of duplicate rows: {duplicate_count}")
+
+# # total number of rows in the dataset
+# total_rows = df.shape[0]
+# print(f"\nTotal Rows: {total_rows}")
+
+# # 2. Calculate Duplicate Rows Percentage 
+# duplicate_percentage = (duplicate_count/total_rows)*100
+# print(f"\nDuplicate rows percentage: {duplicate_percentage:.2f}%")
+
+# # Show the duplicate rows
+# duplicate_rows = df[df.duplicated()]
+# print(f"\nDuplicate Rows:")
+# print(duplicate_rows)
+
+
+# # find all duplicate rows , includuing the first occurrence
+
+# all_duplicate = df[df.duplicated(keep=False)]
+# print(f"\nAll Duplicate rows : { all_duplicate}")
+
+# # Check for duplicates in specific columns
+# # allduplicate = df[df.duplicated(keep=False)]
+# # col_name = [
+# # 'Transaction_ID',
+# # 'Customer_ID',
+# # 'Order_ID',
+# # 'Prduct_ID',
+# # 'Customer_Name'
+# # ]
+# # print(allduplicate[col_name])
+
+# allduplicate= df[df['Customer_ID'].duplicated(keep=False)]
+# print(f"\nAll Duplicate rows in Customer_ID: {allduplicate}")
+
+# ### TASK 3.2 — Date Validation
+
+# #1 check Order_Date data type
+# print(f"\nOrder_Date data type: {df['Order_Date'].dtype}")
+
+# #2 check date formate
+# df['Order_Date'] = pd.to_datetime(df['Order_Date'], errors = 'coerce', format='%Y-%m-%d')
+
+# df['Order_Year'] = pd.to_datetime(df['Order_Year'], errors='coerce')
+
+# # print(f"\nOrder_date formate:{df['Order_Date'].dtypes}")
+# # print(f"\nOrder_date after conversion:\n{df['Order_Date'].head(10)}")
+
+# #2 check for invalid dates
+# invalid_dates = df[df['Order_Date'].isnull()]
+# print(f"\nInvalid Dates:\n{invalid_dates}")
+
+# # 3
+
+# # 4 & 5 Date range analysis and First and Last Order Dates 
+
+# min_date = df['Order_Date'].min()
+# max_date = df['Order_Date'].max()
+# date_range =  max_date - min_date
+# print("Date Range Analysis")
+# print("=====================")
+# print("First Order Date: ", min_date) 
+# print("Last Order Date: ", max_date)
+# print("Date Range: ", date_range.days, "days" )
+# print("Date Range in Years: " , round(date_range.days/365.25, 2), "years")
+
+# ### TASK 3.3 — Numerical Value Validation single way
+# # 1. Check numerical Columns
+# numeric_columns = [
+#     'Customer_Age',
+#     'Quantity',
+#     'Unit_Price',
+#     'Discount_Percentage',
+#     'Sales_Amount',
+#     'Cost_Amount',
+#     'Profit',
+#     'Delivery_Days',
+#     'Customer_Rating'
+# ]
+# print("------------Minimum Values--------------------\n")
+# for col in numeric_columns:
+#     print(col, "Minimum:", df[col].min())
+# print("-------------Maximum Values-------------------\n")
+# for col in numeric_columns:
+#     print(col, "Maximum:", df[col].max())
+
+# # 3. Negative Value Count
+# for col in numeric_columns:
+#     negative_count = (df[col] <0).sum()
+#     print(f"\nNegative Value Count in {col} : {negative_count}")
+# # 4. Zero Value Count
+# print("\n-------------Zero Values-------------------\n")
+# for col in numeric_columns:
+#     zero_count = (df[col]==0).sum()
+#     print(f"\nZero Value Count in {col} : {zero_count}")
+
+
+# ### Task 3.3 — Numerical Value Validation - Try another way to get all results in one table
+# # ----------- all result in one table -----------
+
+# numeric_columns = [
+#     'Customer_Age',
+#     'Quantity',
+#     'Unit_Price',
+#     'Discount_Percentage',
+#     'Sales_Amount',
+#     'Cost_Amount',
+#     'Profit',
+#     'Delivery_Days',
+#     'Customer_Rating'
+# ]
+
+# results = []
+
+# for col in numeric_columns:
+#     results.append({
+#         'Column': col,
+#         'Minimum':df[col].min(),
+#         'Maximum':df[col].max(),
+#         'Negative':(df [col] < 0 ).sum(),
+#         'Zero Count': (df[col] == 0).sum()
+
+#     })
+
+# report = pd.DataFrame(results)
+# print(report.to_string(index=False))
+
+
+# ### TASK 3.4 — Date Range ও Order Year 
+
+# # Step 1: Convert Order_Date to Datetime
+# df['Order_Date'] = pd.to_datetime(df['Order_Date'],format='mixed')
+
+# # Step 2: Extract Year from Order_Date
+# df['Date_year'] = df['Order_Date'].dt.year
+
+# # Step 3: Compare Date_year with Order_Year
+
+
+# # Step 4: Display Result
+# print(df[['Order_Date', 'Date_year']].head(10))
+
+
+
 import pandas as pd
+
+# =========================================================
+# এই স্ক্রিপ্টটি আপনার CSV ডেটা বিশ্লেষণ করে একটা সুন্দর
+# Markdown রিপোর্ট (report.md) তৈরি করে — যেটা GitHub-এ
+# সরাসরি পোস্ট করা যাবে।
+#
+# চালানোর নিয়ম (টার্মিনালে):
+#   python generate_report.py
+#
+# কাজ শেষে "report.md" নামে ফাইল তৈরি হবে।
+# =========================================================
 
 # Load Dataset
 df = pd.read_csv('data/Sales_transactions_2022_2025.csv')
 
-# task 3.1 
-# 1. Count Duplicate Rows o total duplicate rows in the dataset
-duplicate_count =df.duplicated().sum()
-print(f"\nTotal number of duplicate rows: {duplicate_count}")
+# রিপোর্ট লেখার জন্য একটা লিস্ট — শেষে সব একসাথে ফাইলে লেখা হবে
+report_lines = []
 
-# total number of rows in the dataset
+def add(text=""):
+    """একটা লাইন রিপোর্টে যোগ করে"""
+    report_lines.append(text)
+
+def add_table(dataframe, max_rows=None):
+    """DataFrame-কে Markdown টেবিল আকারে যোগ করে"""
+    if max_rows:
+        dataframe = dataframe.head(max_rows)
+    try:
+        add(dataframe.to_markdown(index=False))
+    except ImportError:
+        # tabulate প্যাকেজ না থাকলে প্লেইন টেক্সট হিসেবে দেখাবে
+        add("```")
+        add(dataframe.to_string(index=False))
+        add("```")
+    add()
+
+add("# Sales Transactions Data Quality Report")
+add()
+add(f"**Dataset:** `data/Sales_transactions_2022_2025.csv`")
+add()
+add("---")
+add()
+
+# =========================================================
+# TASK 3.1 — Duplicate Row Checking
+# =========================================================
+add("## Task 3.1 — Duplicate Row Checking")
+add()
+
+# 1. Count Duplicate Rows & total duplicate rows in the dataset
+duplicate_count = df.duplicated().sum()
 total_rows = df.shape[0]
-print(f"\nTotal Rows: {total_rows}")
+duplicate_percentage = (duplicate_count / total_rows) * 100
 
-# 2. Calculate Duplicate Rows Percentage 
-duplicate_percentage = (duplicate_count/total_rows)*100
-print(f"\nDuplicate rows percentage: {duplicate_percentage:.2f}%")
+add(f"- **Total Rows:** {total_rows}")
+add(f"- **Total Duplicate Rows:** {duplicate_count}")
+add(f"- **Duplicate Rows Percentage:** {duplicate_percentage:.2f}%")
+add()
 
 # Show the duplicate rows
 duplicate_rows = df[df.duplicated()]
-print(f"\nDuplicate Rows:")
-print(duplicate_rows)
+add("### Duplicate Rows (first occurrence excluded)")
+add()
+if duplicate_rows.empty:
+    add("_No duplicate rows found._")
+    add()
+else:
+    add_table(duplicate_rows, max_rows=20)
 
-
-# find all duplicate rows , includuing the first occurrence
-
+# find all duplicate rows, including the first occurrence
 all_duplicate = df[df.duplicated(keep=False)]
-print(f"\nAll Duplicate rows : { all_duplicate}")
+add("### All Duplicate Rows (including first occurrence)")
+add()
+if all_duplicate.empty:
+    add("_No duplicate rows found._")
+    add()
+else:
+    add_table(all_duplicate, max_rows=20)
 
-# Check for duplicates in specific columns
-# allduplicate = df[df.duplicated(keep=False)]
-# col_name = [
-# 'Transaction_ID',
-# 'Customer_ID',
-# 'Order_ID',
-# 'Prduct_ID',
-# 'Customer_Name'
-# ]
-# print(allduplicate[col_name])
+# Check for duplicates in specific column: Customer_ID
+allduplicate = df[df['Customer_ID'].duplicated(keep=False)]
+add("### Duplicate `Customer_ID` Rows")
+add()
+if allduplicate.empty:
+    add("_No duplicate Customer_ID found._")
+    add()
+else:
+    add_table(allduplicate, max_rows=20)
 
-allduplicate= df[df['Customer_ID'].duplicated(keep=False)]
-print(f"\nAll Duplicate rows in Customer_ID: {allduplicate}")
+add("---")
+add()
 
-### TASK 3.2 — Date Validation
+# =========================================================
+# TASK 3.2 — Date Validation
+# =========================================================
+add("## Task 3.2 — Date Validation")
+add()
 
-#1 check Order_Date data type
-print(f"\nOrder_Date data type: {df['Order_Date'].dtype}")
+add(f"- **Order_Date original dtype:** `{df['Order_Date'].dtype}`")
+add()
 
-#2 check date formate
-df['Order_Date'] = pd.to_datetime(df['Order_Date'], errors = 'coerce', format='%Y-%m-%d')
+# convert to datetime
+df['Order_Date'] = pd.to_datetime(df['Order_Date'], errors='coerce', format='%Y-%m-%d')
 
-df['Order_Year'] = pd.to_datetime(df['Order_Year'], errors='coerce')
-
-# print(f"\nOrder_date formate:{df['Order_Date'].dtypes}")
-# print(f"\nOrder_date after conversion:\n{df['Order_Date'].head(10)}")
-
-#2 check for invalid dates
+# check for invalid dates
 invalid_dates = df[df['Order_Date'].isnull()]
-print(f"\nInvalid Dates:\n{invalid_dates}")
+add(f"- **Invalid / Unparseable Dates found:** {invalid_dates.shape[0]}")
+add()
+if not invalid_dates.empty:
+    add("### Invalid Date Rows")
+    add()
+    add_table(invalid_dates, max_rows=20)
 
-# 3
-
-# 4 & 5 Date range analysis and First and Last Order Dates 
-
+# Date range analysis and First and Last Order Dates
 min_date = df['Order_Date'].min()
 max_date = df['Order_Date'].max()
-date_range =  max_date - min_date
-print("Date Range Analysis")
-print("=====================")
-print("First Order Date: ", min_date) 
-print("Last Order Date: ", max_date)
-print("Date Range: ", date_range.days, "days" )
-print("Date Range in Years: " , round(date_range.days/365.25, 2), "years")
+date_range = max_date - min_date
 
-### TASK 3.3 — Numerical Value Validation single way
-# 1. Check numerical Columns
-numeric_columns = [
-    'Customer_Age',
-    'Quantity',
-    'Unit_Price',
-    'Discount_Percentage',
-    'Sales_Amount',
-    'Cost_Amount',
-    'Profit',
-    'Delivery_Days',
-    'Customer_Rating'
-]
-print("------------Minimum Values--------------------\n")
-for col in numeric_columns:
-    print(col, "Minimum:", df[col].min())
-print("-------------Maximum Values-------------------\n")
-for col in numeric_columns:
-    print(col, "Maximum:", df[col].max())
+add("### Date Range Analysis")
+add()
+add(f"- **First Order Date:** {min_date}")
+add(f"- **Last Order Date:** {max_date}")
+add(f"- **Date Range:** {date_range.days} days")
+add(f"- **Date Range in Years:** {round(date_range.days / 365.25, 2)} years")
+add()
+add("---")
+add()
 
-# 3. Negative Value Count
-for col in numeric_columns:
-    negative_count = (df[col] <0).sum()
-    print(f"\nNegative Value Count in {col} : {negative_count}")
-# 4. Zero Value Count
-print("\n-------------Zero Values-------------------\n")
-for col in numeric_columns:
-    zero_count = (df[col]==0).sum()
-    print(f"\nZero Value Count in {col} : {zero_count}")
-
-
-### Task 3.3 — Numerical Value Validation - Try another way to get all results in one table
-# ----------- all result in one table -----------
+# =========================================================
+# TASK 3.3 — Numerical Value Validation
+# =========================================================
+add("## Task 3.3 — Numerical Value Validation")
+add()
 
 numeric_columns = [
     'Customer_Age',
@@ -119,35 +297,47 @@ numeric_columns = [
 ]
 
 results = []
-
 for col in numeric_columns:
     results.append({
         'Column': col,
-        'Minimum':df[col].min(),
-        'Maximum':df[col].max(),
-        'Negative':(df [col] < 0 ).sum(),
+        'Minimum': df[col].min(),
+        'Maximum': df[col].max(),
+        'Negative Count': (df[col] < 0).sum(),
         'Zero Count': (df[col] == 0).sum()
-
     })
 
-report = pd.DataFrame(results)
-print(report.to_string(index=False))
+report_table = pd.DataFrame(results)
+add("### Summary Table (Min / Max / Negative / Zero Counts)")
+add()
+add_table(report_table)
 
-### TASK 3.4 — Date Range ও Order Year 
+add("---")
+add()
 
-# Step 1: Convert Order_Date to Datetime
-df['Order_Date'] = pd.to_datetime(df['Order_Date'])
+# =========================================================
+# TASK 3.4 — Date Range ও Order Year
+# =========================================================
+add("## Task 3.4 — Date Range ও Order Year")
+add()
 
-# Step 2: Extract Year from Order_Date
+# Convert Order_Date to Datetime (mixed format safety net)
+df['Order_Date'] = pd.to_datetime(df['Order_Date'], format='mixed', errors='coerce')
+
+# Extract Year from Order_Date
 df['Date_year'] = df['Order_Date'].dt.year
 
-# Step 3: Compare Date_year with Order_Year
-df['Result'] = df['Date_year'].eq(df['Order_Date']).map({
-    True:'Match',
-    False:'Mismatch'
-})
+add("### Order_Date এর সাথে Extracted Year (প্রথম ১০টি সারি)")
+add()
+add_table(df[['Order_Date', 'Date_year']], max_rows=10)
 
-# Step 4: Display Result
-print(df[['Result', 'Order_Date','Order_Year']])
+add("---")
+add()
+add("_Report generated automatically from `generate_report.py`._")
 
+# =========================================================
+# ফাইলে লেখা
+# =========================================================
+with open('report.md', 'w', encoding='utf-8') as f:
+    f.write("\n".join(report_lines))
 
+print("✅ report.md is ready। Please check your folder.")
