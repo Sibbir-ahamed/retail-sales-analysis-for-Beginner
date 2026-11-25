@@ -1,14 +1,9 @@
-
-
-
-
 import pandas as pd
-
 
 # Load Dataset
 df = pd.read_csv('data/Sales_transactions_2022_2025.csv')
 
-# রিপোর্ট লেখার জন্য একটা লিস্ট — শেষে সব একসাথে ফাইলে লেখা হবে
+# A list of report items that will be combined and written into a single file at the end
 report_lines = []
 
 def add(text=""):
@@ -16,13 +11,13 @@ def add(text=""):
     report_lines.append(text)
 
 def add_table(dataframe, max_rows=None):
-    """DataFrame-কে Markdown টেবিল আকারে যোগ করে"""
+    """Add the DataFrame as a Markdown table."""
     if max_rows:
         dataframe = dataframe.head(max_rows)
     try:
         add(dataframe.to_markdown(index=False))
     except ImportError:
-        # tabulate প্যাকেজ না থাকলে প্লেইন টেক্সট হিসেবে দেখাবে
+        # If the `tabulate` package is not installed, display the DataFrame as plain text.
         add("```")
         add(dataframe.to_string(index=False))
         add("```")
@@ -157,9 +152,9 @@ add("---")
 add()
 
 # =========================================================
-# TASK 3.4 — Date Range ও Order Year
+# TASK 3.4 — Date Range and Order Year
 # =========================================================
-add("## Task 3.4 — Date Range ও Order Year")
+add("## Task 3.4 — Date Range & Order Year")
 add()
 
 # Convert Order_Date to Datetime (mixed format safety net)
@@ -168,7 +163,7 @@ df['Order_Date'] = pd.to_datetime(df['Order_Date'], format='mixed', errors='coer
 # Extract Year from Order_Date
 df['Date_year'] = df['Order_Date'].dt.year
 
-add("### Order_Date এর সাথে Extracted Year (প্রথম ১০টি সারি)")
+add("### Order_Date and Extracted Year (First 10 Rows)")
 add()
 add_table(df[['Order_Date', 'Date_year']], max_rows=10)
 
@@ -177,9 +172,9 @@ add()
 add("_Report generated automatically from `generate_report.py`._")
 
 # =========================================================
-# ফাইলে লেখা
+# writing the file
 # =========================================================
 with open('report.md', 'w', encoding='utf-8') as f:
     f.write("\n".join(report_lines))
 
-print("✅ report.md is ready। Please check your folder.")
+print("report.md is ready। Please check your folder.")
