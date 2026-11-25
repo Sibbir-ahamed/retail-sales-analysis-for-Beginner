@@ -1,5 +1,20 @@
-# 📊 TASK 03 — Data Quality Audit & Validation
+<div align="center">
 
+# 📊 TASK 03
+## 📊 TASK 03 — Data Quality Audit & Validation
+
+**Retail Sales & Profitability Analysis**
+
+<br>
+
+![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-Data_Quality-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![Level](https://img.shields.io/badge/Level-Beginner-brightgreen?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Assignment-orange?style=for-the-badge)
+
+**Identify Missing Data. Measure Its Impact. Investigate Before Making Changes.**
+
+</div>
 **Project:** Retail Sales & Profitability Analysis  
 **Position:** Junior Data Analyst  
 **Difficulty:** Intermediate 🟠  
