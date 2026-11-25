@@ -13,7 +13,7 @@
 ![Status](https://img.shields.io/badge/Status-Assignment-orange?style=for-the-badge)
 
 **Identify Missing Data. Measure Its Impact. Investigate Before Making Changes.**
-
+---
 </div>
 **Project:** Retail Sales & Profitability Analysis  
 **Position:** Junior Data Analyst  
