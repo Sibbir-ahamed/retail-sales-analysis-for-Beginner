@@ -1,178 +1,151 @@
-# 📊 Task 03 — Data Quality Audit & Validation
+# 📊 TASK 03 — Data Quality Audit & Validation
 
-### Retail Sales & Profitability Analysis
-
-![Python](https://img.shields.io/badge/Python-Data_Analysis-blue?logo=python)
-![Pandas](https://img.shields.io/badge/Library-Pandas-150458?logo=pandas)
-![Status](https://img.shields.io/badge/Status-In_Progress-orange)
-![Level](https://img.shields.io/badge/Level-Intermediate-yellow)
-
----
-
-## 📌 Overview
-
-In this task, I will check the quality of my retail sales dataset using Python and Pandas.
-
-During my initial data inspection, I found some unusual values that may affect the accuracy of my analysis.
-
-My goal is to identify these values, investigate possible problems, and understand their meaning from a business point of view.
-
-> **This task focuses on Data Quality Audit, not Data Cleaning.**
+**Project:** Retail Sales & Profitability Analysis  
+**Position:** Junior Data Analyst  
+**Difficulty:** Intermediate 🟠  
+**Tools:** Python, Pandas, VS Code  
+**Dataset:** `Sales_transactions_2022_2025.csv`  
+**Submission:** Python Script + Excel Report + GitHub Documentation
 
 ---
 
 ## 🎯 Business Scenario
 
-During the initial inspection, I found some unusual values in the dataset:
+The company manager has noticed some unusual values in the sales dataset.
 
-| Column | Finding |
-|---|---|
-| `Quantity` | Minimum value: -3 |
-| `Discount_Percentage` | Maximum value: 110 |
-| `Customer_Age` | Maximum value: 112 |
-| `Profit` | Contains negative values |
-| `Order_Date` | Stored as a string |
+During the initial inspection, the following observations were found:
 
-These findings raised an important question:
+- The minimum value of `Quantity` is `-3`.
+- The maximum value of `Discount_Percentage` is `110`.
+- The maximum value of `Customer_Age` is `112`.
+- The `Profit` column contains negative values.
+- The `Order_Date` column is stored as a string.
 
-**Are these values actual data errors, or are they part of normal business activities?**
+The management team wants to understand:
 
-I will investigate these values before making any decision.
+**Are these values actual data quality problems, or are they part of normal business operations?**
 
----
-
-## 📝 Task 3.1 — Duplicate Records Analysis
-
-Duplicate records can affect transaction counts and sales calculations.
-
-### What I Will Do
-
-- Check for completely duplicated rows.
-- Count the total duplicate records.
-- Calculate the duplicate percentage.
-- Display and inspect duplicate records.
-
-### Validation Summary
-
-| Validation Check | Result |
-|---|---:|
-| Total Rows | To be calculated |
-| Duplicate Rows | To be calculated |
-| Duplicate Percentage | To be calculated |
-
-### Business Questions
-
-- How many duplicate records exist?
-- What percentage of the dataset contains duplicates?
-- Can duplicate records affect sales analysis?
-- Should duplicate records be deleted immediately?
-
-**My Approach:** I will investigate duplicate records before deciding whether they should be removed.
+Your responsibility is to perform a Data Quality Audit, identify potential issues, and provide data-based evidence for each finding.
 
 ---
 
-## 📅 Task 3.2 — Date Validation
+## 📝 TASK 3.1 — Duplicate Records Analysis
+
+First, check whether the dataset contains duplicate records.
+
+### Your Tasks
+
+1. Identify completely duplicated rows.
+2. Calculate the total number of duplicate rows.
+3. Calculate the percentage of duplicate rows.
+4. Examine the duplicate records, if any.
+
+### Manager's Questions
+
+- How many duplicate rows are present in the dataset?
+- What percentage of the dataset contains duplicate rows?
+- Should duplicate records be deleted immediately? Why or why not?
+
+**Important:** Do not delete any duplicate rows at this stage.
+
+---
+
+## 📝 TASK 3.2 — Date Validation
 
 The `Order_Date` column is currently stored as a string.
 
-To perform date-based analysis, I need to check whether the dates are valid and usable.
+To perform accurate sales trend analysis, the date values must be handled correctly.
 
-### What I Will Do
+### Your Tasks
 
-- Check the current data type.
-- Validate date conversion.
-- Identify invalid dates.
-- Find the earliest and latest order dates.
-- Calculate the date range.
+1. Check the current data type of `Order_Date`.
+2. Verify whether the dates follow a consistent format.
+3. Identify dates that cannot be parsed.
+4. Validate the date range.
+5. Find the earliest and latest order dates in the dataset.
 
-### Validation Summary
+### Manager's Questions
 
-| Validation Check | Result |
-|---|---|
-| Current Data Type | To be checked |
-| Invalid Date Count | To be calculated |
-| First Order Date | To be calculated |
-| Last Order Date | To be calculated |
-| Date Range | To be calculated |
+- Is the `Order_Date` column suitable for DateTime analysis?
+- How can invalid dates be identified?
+- What problems can incorrect date formats cause in sales trend analysis?
 
-### Business Questions
-
-- Is `Order_Date` suitable for date analysis?
-- Are there any invalid dates?
-- How can incorrect dates affect sales trend analysis?
+**Important:** Do not modify the original dataset. Use a separate test Series or DataFrame if necessary.
 
 ---
 
-## 🔢 Task 3.3 — Numerical Value Validation
+## 📝 TASK 3.3 — Numerical Value Validation
 
-In this task, I will check important numerical columns to identify unusual values.
+Now, validate the following important numerical columns.
 
-### Columns Under Review
-
-| Column | Validation Focus |
+| Column | Validation Check |
 |---|---|
 | `Customer_Age` | Unusual age values |
 | `Quantity` | Negative or zero quantity |
-| `Unit_Price` | Negative or zero price |
-| `Discount_Percentage` | Invalid discount values |
-| `Sales_Amount` | Negative or zero sales |
-| `Cost_Amount` | Negative or zero cost |
+| `Unit_Price` | Zero or negative price |
+| `Discount_Percentage` | Unusual discount values |
+| `Sales_Amount` | Zero or negative sales |
+| `Cost_Amount` | Zero or negative cost |
 | `Profit` | Negative profit |
 | `Delivery_Days` | Negative delivery days |
-| `Customer_Rating` | Rating outside the allowed range |
+| `Customer_Rating` | Ratings outside the allowed range |
 
-### What I Will Check
+### Your Tasks
 
-For each numerical column, I will calculate:
+For each column:
 
-- Minimum Value
-- Maximum Value
-- Negative Value Count
-- Zero Value Count
-- Potentially Unusual Value Count
+1. Calculate the minimum value.
+2. Calculate the maximum value.
+3. Count negative values where applicable.
+4. Count zero values where applicable.
+5. Identify the number of potentially unusual values.
 
-### Basic Validation Rules
+### Initial Business Validation Rules
 
-| Column | Validation Rule |
+You may use the following rules as a starting point:
+
+| Column | Initial Validation Rule |
 |---|---|
-| `Customer_Age` | Negative age is invalid |
-| `Quantity` | Negative quantity needs investigation |
-| `Unit_Price` | Negative price needs investigation |
-| `Discount_Percentage` | Values outside 0–100 need checking |
-| `Customer_Rating` | Values outside 1–5 need checking |
-| `Delivery_Days` | Negative delivery days need investigation |
+| `Customer_Age` | Negative age is unusual |
+| `Quantity` | Negative quantity requires investigation |
+| `Unit_Price` | Negative price requires investigation |
+| `Discount_Percentage` | Values outside 0–100 require investigation |
+| `Customer_Rating` | Values outside 1–5 require investigation |
+| `Delivery_Days` | Negative values require investigation |
 
-### Business Observation
-
-Not every unusual value is necessarily wrong.
+**Important:** These are initial validation rules, not final business rules.
 
 For example:
 
-- Negative quantity may represent a product return.
-- Negative profit may represent a business loss.
-- Zero sales may be related to cancelled orders.
-- Negative cost may represent a refund or adjustment.
+- Negative quantity may represent a return or adjustment.
+- Negative profit may represent a genuine business loss.
+- Zero sales may be related to cancelled orders or promotional transactions.
 
-I will use business context before classifying any value as an error.
+Do not classify any value as incorrect without supporting evidence.
+
+### Manager's Questions
+
+- Which column contains the highest number of potentially unusual values?
+- Which unusual values may be part of normal business operations?
+- Which values require additional information or investigation?
 
 ---
 
-## 📆 Task 3.4 — Date Range & Order Year Consistency
+## 📝 TASK 3.4 — Date Range & Order Year Consistency
 
 The dataset contains two important columns:
 
 - `Order_Date`
 - `Order_Year`
 
-I will check whether both columns contain consistent year information.
+Your goal is to check whether these two columns are consistent.
 
-### What I Will Do
+### Your Tasks
 
 1. Extract the year from `Order_Date`.
-2. Compare it with `Order_Year`.
-3. Identify mismatched records.
-4. Count the total year mismatches.
-5. Inspect the mismatched records.
+2. Compare the extracted year with `Order_Year`.
+3. Identify records where the years do not match.
+4. Calculate the total number of year-mismatch records.
 
 ### Example
 
@@ -182,81 +155,48 @@ I will check whether both columns contain consistent year information.
 | 2023-08-15 | 2024 | Mismatch |
 | 2025-02-20 | 2025 | Match |
 
-*Example data only.*
+*This is only an example.*
 
-### Business Question
+### Manager's Question
 
-How can year mismatches affect yearly sales reports and business performance analysis?
+If `Order_Date` and `Order_Year` are inconsistent, how reliable will the Year-wise Sales Analysis be?
 
 ---
 
-## 📋 Task 3.5 — Data Quality Summary
+## 📝 TASK 3.5 — Create a Data Quality Summary
 
-After completing the validation tasks, I will prepare a summary of the results.
+Now, organize all your validation results into a single summary.
+
+A Data Analyst should not only identify problems but also prepare a report that helps the manager make informed decisions.
+
+### Your Report Must Include
 
 | Validation Check | Result |
-|---|---:|
-| Total Rows | Actual Count |
-| Duplicate Rows | Actual Count |
-| Invalid Date Count | Actual Count |
-| Negative Quantity Count | Actual Count |
-| Invalid Discount Count | Actual Count |
-| Invalid Rating Count | Actual Count |
-| Order Year Mismatch | Actual Count |
+|---|---|
+| Total Rows | Actual count |
+| Duplicate Rows | Actual count |
+| Invalid Date Count | Actual count |
+| Negative Quantity Count | Actual count |
+| Invalid Discount Count | Actual count |
+| Invalid Rating Count | Actual count |
+| Order Year Mismatch | Actual count |
 
-All results will be calculated using Python and Pandas.
+All results must be calculated directly from the dataset using Python and Pandas.
 
----
+**Do not enter or assume any result manually.**
 
-## ⚠️ Audit Guidelines
+## ⚠️ Manager's Strict Instructions
 
-During this task, I will follow these rules:
+The following rules must be followed throughout this task:
 
-- Use Pandas for data analysis.
+- Use only Pandas for data analysis.
 - Do not use NumPy, SQL, or visualization libraries.
 - Do not delete any rows.
-- Do not fill missing values.
-- Do not modify original values.
-- Do not treat every unusual value as an error.
-- Support findings with actual data.
-- Consider business context before making decisions.
+- Do not fill any missing values.
+- Do not modify any original values.
+- Do not classify every unusual value as incorrect data.
+- Support every finding with data-based evidence.
 
----
+Your current responsibility is **Data Quality Audit**, not Data Cleaning.
 
-## ✅ Progress Checklist
-
-- [ ] Duplicate Records Analysis
-- [ ] Duplicate Percentage Calculation
-- [ ] Date Validation
-- [ ] Invalid Date Identification
-- [ ] Date Range Analysis
-- [ ] Numerical Value Validation
-- [ ] Negative Quantity Investigation
-- [ ] Negative Profit Investigation
-- [ ] Discount & Rating Validation
-- [ ] Order Year Consistency Check
-- [ ] Data Quality Summary
-- [ ] Business Observations
-- [ ] Excel Report Preparation
-
----
-
-## 📦 Deliverables
-
-| Deliverable | Description |
-|---|---|
-| Python Script | Data Quality Audit using Pandas |
-| Excel Report | Validation results and summary |
-| Documentation | Findings and business observations |
-
----
-
-## 👨‍💼 Manager's Review
-
-I will complete this task step by step.
-
-### First Assignment: Task 3.1 — Duplicate Records Analysis
-
-I will start by checking duplicate records only.
-
-**Submission:
+The goal is to identify potential data quality issues, understand their business context, and provide reliable findings for management.
