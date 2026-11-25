@@ -45,7 +45,7 @@ retail-sales-analysis/
 ├── src/
 │   ├── task-01-dataset-inspection.py
 |   ├── task-02-missing-values-analysis.py
-|    └──   task-03-data-quality-audit.py
+|   └──   task-03-data-quality-audit.py
 │
 ├── task/
 │   ├── task-01-dataset-inspection.md
